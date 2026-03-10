@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máxima Segurança do Trabalho | Autoridade Máxima em SST</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="inicio">
+
+<header>
+    <div class="container header-flex">
+        <img src="logo-maxima.png" alt="Máxima" class="logo">
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#agendamento">Agendamento</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#solucoes">Empresas</a>
+            <a href="#tecnico">Técnico</a>
+            <a href="#relacionamento">Relacionamento</a>
+            <a href="#credenciada">Credenciadas</a>
+            <a href="#financeiro">Financeiro</a>
+            <a href="#trabalhe">Trabalhe Conosco</a>
+        </nav>
+        <button class="btn btn-verde" onclick="toggleChat()">Atendimento Online</button>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="eyebrow">Máxima Segurança do Trabalho</span>
+                <h1>Estratégia e Segurança para o seu Negócio</h1>
+                <p>Gestão completa em Medicina e Segurança do Trabalho com foco em conformidade total ao eSocial e agilidade operacional.</p>
+                <div class="hero-btns">
+                    <button class="btn btn-verde" onclick="scrollPara('agendamento')">Agendar Exame agora</button>
+                    <button class="btn btn-outline" onclick="scrollPara('solucoes')">Proposta Comercial</button>
+                </div>
+            </div>
+            <div class="hero-img-container">
+                <img src="banner-hero.jpg" alt="Equipe Máxima" class="hero-img">
+                <div class="stats-overlay">
+                    <div class="stat-card">
+                        <h3>+2000</h3>
+                        <p>Empresas Atendidas</p>
+                    </div>
+                    <div class="stat-card featured">
+                        <h3>100%</h3>
+                        <p>Conformidade Legal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agendamento" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>Portal de Agendamento</h2>
+                <p>Selecione seu perfil para agilizar o atendimento</p>
+            </div>
+            <div class="portal-grid">
+                <div class="card-portal">
+                    <span class="badge blue">Particular</span>
+                    <h3>Exame Individual</h3>
+                    <div class="form-container">
+                        <input type="text" id="aso-nome" placeholder="Nome Completo">
+                        <div class="input-row">
+                            <input type="text" id="aso-cpf" placeholder="CPF">
+                            <input type="text" id="aso-nasc" placeholder="Data de Nascimento" onfocus="(this.type='date')" onblur="(if(!this.value) this.type='text')">
+                        </div>
+                        <input type="text" id="aso-funcao" placeholder="Função">
+                        <select id="aso-tipo">
+                            <option value="">Tipo de Exame</option>
+                            <option value="Admissional">Admissional</option>
+                            <option value="Periódico">Periódico</option>
+                            <option value="Retorno ao Trabalho">Retorno ao Trabalho</option>
+                            <option value="Mudança de Função">Mudança de Função</option>
+                        </select>
+                        <button class="btn btn-verde" style="width: 100%" onclick="enviarWpp('agendamento', 'aso')">Solicitar Agendamento</button>
+                    </div>
+                </div>
+                <div class="card-portal">
+                    <span class="badge green">Empresa Parceira</span>
+                    <h3>Enviar Colaborador</h3>
+                    <div class="form-container">
+                        <input type="text" id="rh-empresa" placeholder="Nome da Empresa">
+                        <input type="text" id="rh-colab" placeholder="Nome do Colaborador">
+                        <div class="input-row">
+                            <input type="text" id="rh-cpf" placeholder="CPF">
+                            <input type="text" id="rh-funcao" placeholder="Função">
+                        </div>
+                        <select id="rh-tipo">
+                            <option value="">Tipo de Exame</option>
+                            <option value="Admissional">Admissional</option>
+                            <option value="Periódico">Periódico</option>
+                            <option value="Retorno ao Trabalho">Retorno ao Trabalho</option>
+                            <option value="Mudança de Função">Mudança de Função</option>
+                            <option value="Demissional">Demissional</option>
+                        </select>
+                        <button class="btn btn-verde" style="width: 100%" onclick="enviarWpp('agendamento', 'rh')">Enviar Autorização</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resultados" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Resultados de Exames</h2>
+                <p>Solicite aqui o resultado dos seus exames</p>
+            </div>
+            <div class="portal-grid">
+                <div class="card-portal">
+                    <span class="badge blue">Particular</span>
+                    <h3>Exame Individual</h3>
+                    <div class="form-container">
+                        <input type="text" id="res-aso-nome" placeholder="Nome Completo">
+                        <div class="input-row">
+                            <input type="text" id="res-aso-cpf" placeholder="CPF">
+                            <input type="text" id="res-aso-data" placeholder="Data do Exame (Opcional)" onfocus="(this.type='date')" onblur="(if(!this.value) this.type='text')">
+                        </div>
+                        <select id="res-aso-tipo">
+                            <option value="">Tipo de Exame</option>
+                            <option value="Admissional">Admissional</option>
+                            <option value="Periódico">Periódico</option>
+                            <option value="Retorno ao Trabalho">Retorno ao Trabalho</option>
+                            <option value="Mudança de Função">Mudança de Função</option>
+                            <option value="Outros">Outros exames</option>
+                        </select>
+                        <button class="btn btn-outline" style="width: 100%" onclick="enviarWpp('resultados', 'aso')">Solicitar Resultado</button>
+                    </div>
+                </div>
+                <div class="card-portal">
+                    <span class="badge green">Empresa Parceira</span>
+                    <h3>Colaborador</h3>
+                    <div class="form-container">
+                        <input type="text" id="res-rh-empresa" placeholder="Nome da Empresa">
+                        <input type="text" id="res-rh-colab" placeholder="Nome do Colaborador">
+                        <div class="input-row">
+                            <input type="text" id="res-rh-cpf" placeholder="CPF">
+                            <input type="text" id="res-rh-data" placeholder="Data do Exame (Opcional)" onfocus="(this.type='date')" onblur="(if(!this.value) this.type='text')">
+                        </div>
+                        <select id="res-rh-tipo">
+                            <option value="">Tipo de Exame</option>
+                            <option value="Admissional">Admissional</option>
+                            <option value="Periódico">Periódico</option>
+                            <option value="Retorno ao Trabalho">Retorno ao Trabalho</option>
+                            <option value="Mudança de Função">Mudança de Função</option>
+                            <option value="Demissional">Demissional</option>
+                        </select>
+                        <button class="btn btn-outline" style="width: 100%" onclick="enviarWpp('resultados', 'rh')">Solicitar Resultado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="section-padding bg-dark">
+        <div class="container grid-z">
+            <div class="text-content">
+                <h2>Para sua Empresa</h2>
+                <p>Procurando gestão eficiente? Solicite uma proposta personalizada para PGR, PCMSO e gestão de eSocial.</p>
+                <div class="card-form-mini">
+                    <input type="text" id="com-nome" placeholder="Seu Nome">
+                    <input type="text" id="com-cnpj" placeholder="CNPJ da Empresa">
+                    <textarea id="com-msg" placeholder="O que sua empresa precisa?"></textarea>
+                    <button class="btn btn-verde" onclick="enviarWpp('comercial')">Solicitar Proposta Comercial</button>
+                </div>
+            </div>
+            <img src="banner-comercial.jpg" alt="Soluções Corporativas" class="banner-img">
+        </div>
+    </section>
+
+    <section id="relacionamento" class="section-padding bg-light">
+        <div class="container grid-z reverse">
+            <div class="text-content">
+                <h2>Já é nosso cliente?</h2>
+                <p>Suporte direto para acompanhar exames, tirar dúvidas sobre vencimentos de ASO ou resolver problemas operacionais.</p>
+                <div class="card-form-mini">
+                    <input type="text" id="rel-nome" placeholder="Seu Nome">
+                    <input type="text" id="rel-empresa" placeholder="Nome da Empresa">
+                    <textarea id="rel-msg" placeholder="Descreva o que você precisa..."></textarea>
+                    <button class="btn btn-outline" onclick="enviarWpp('relacionamento')">Falar com Relacionamento</button>
+                </div>
+            </div>
+            <img src="banner-relacionamento.jpg" alt="Relacionamento" class="banner-img">
+        </div>
+    </section>
+
+    <section id="tecnico" class="section-padding">
+        <div class="container grid-z">
+            <div class="text-content">
+                <h2>Dúvidas Técnicas</h2>
+                <p>Recebeu uma visita técnica ou tem dúvidas sobre seus laudos? Fale diretamente com nosso setor de engenharia.</p>
+                <div class="card-form-mini">
+                    <input type="text" id="tec-nome" placeholder="Nome">
+                    <input type="text" id="tec-empresa" placeholder="Empresa">
+                    <textarea id="tec-msg" placeholder="Qual sua dúvida técnica?"></textarea>
+                    <button class="btn btn-verde" onclick="enviarWpp('tecnico')">Contato Técnico Direto</button>
+                </div>
+            </div>
+            <img src="banner-tecnico.jpg" alt="Setor Técnico" class="banner-img">
+        </div>
+    </section>
+
+    <section id="credenciada" class="section-padding bg-dark">
+        <div class="container grid-z reverse">
+            <div class="text-content">
+                <h2>Seja uma Credenciada</h2>
+                <p>Expanda sua clínica fazendo parte da nossa rede nacional de atendimento.</p>
+                <div class="card-form-mini">
+                    <input type="text" id="cred-cnpj" placeholder="CNPJ da Clínica">
+                    <input type="text" id="cred-qtd" placeholder="Média de Atendimentos Mensal">
+                    <input type="text" id="cred-cidade" placeholder="Cidade + UF">
+                    <button class="btn btn-verde" onclick="enviarWpp('credenciamento')">Quero ser Credenciada</button>
+                </div>
+            </div>
+            <img src="banner-credenciada.jpg" alt="Credenciamento" class="banner-img">
+        </div>
+    </section>
+
+    <section id="financeiro" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Canal Financeiro</h2>
+                <p>Resolva pendências, solicite 2ª via ou esclareça faturamentos</p>
+            </div>
+            <div class="financeiro-box" style="max-width: 600px; margin: 0 auto;">
+                <div class="card-form-mini">
+                    <input type="text" id="fin-empresa" placeholder="Nome da Empresa">
+                    <select id="fin-tipo">
+                        <option value="Boleto">2ª Via de Boleto</option>
+                        <option value="Nota Fiscal">Dúvida em Nota Fiscal</option>
+                        <option value="Outros">Outros assuntos financeiros</option>
+                    </select>
+                    <button class="btn btn-verde" style="width: 100%; margin-top: 15px;" onclick="enviarWpp('financeiro')">Contatar Financeiro</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trabalhe" class="section-padding">
+        <div class="container" style="max-width: 800px;">
+            <div class="section-header">
+                <h2>Trabalhe Conosco</h2>
+                <p>Quer fazer parte da equipe Máxima?</p>
+            </div>
+            <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST" enctype="multipart/form-data" class="card-portal">
+                <input type="text" name="nome" placeholder="Nome Completo" required>
+                <input type="text" name="vaga" placeholder="Vaga de Interesse" required>
+                <textarea name="porque" placeholder="Porque você quer fazer parte da equipe Máxima?" required></textarea>
+                <label style="display:block; margin: 10px 0; font-size: 13px; font-weight: 700; color: var(--azul-dark);">Anexe seu Currículo (PDF)</label>
+                <input type="file" name="curriculo" required>
+                <button type="submit" class="btn btn-verde" style="width: 100%; margin-top: 15px;">Enviar Candidatura</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer bg-dark">
+    <div class="container footer-content">
+        <img src="logo-maxima.png" alt="Máxima Segurança do Trabalho" class="footer-logo">
+        <div class="footer-links">
+            <a href="#inicio">Início</a>
+            <a href="#agendamento">Agendamento</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#solucoes">Para sua Empresa</a>
+            <a href="#tecnico">Setor Técnico</a>
+            <a href="#relacionamento">Relacionamento</a>
+            <a href="#credenciada">Seja Credenciada</a>
+            <a href="#financeiro">Financeiro</a>
+            <a href="#trabalhe">Trabalhe Conosco</a>
+        </div>
+        <p class="copyright">&copy; 2026 Máxima Segurança do Trabalho. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<div id="mascote-container">
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">Assistente Máxima</div>
+        <div class="chat-body" id="chatBody">
+            <div class="chat-msg">Olá! Sou o assistente da Máxima. Qual setor você deseja falar?</div>
+            <button class="chat-btn" onclick="scrollPara('solucoes'); toggleChat()">🚀 Para sua Empresa (Comercial)</button>
+            <button class="chat-btn" onclick="scrollPara('agendamento'); toggleChat()">📅 Agendar Exame</button>
+            <button class="chat-btn" onclick="scrollPara('resultados'); toggleChat()">📄 Resultados de Exames</button>
+            <button class="chat-btn" onclick="scrollPara('relacionamento'); toggleChat()">🤝 Relacionamento / Suporte</button>
+            <button class="chat-btn" onclick="scrollPara('tecnico'); toggleChat()">🛠️ Setor Técnico (Dúvidas)</button>
+            <button class="chat-btn" onclick="scrollPara('credenciada'); toggleChat()">🏥 Ser uma Credenciada</button>
+            <button class="chat-btn" onclick="scrollPara('financeiro'); toggleChat()">💰 Financeiro / Boletos</button>
+        </div>
+    </div>
+    <img src="mascote.png" alt="Mascote" class="mascote-img" onclick="toggleChat()">
+</div>
+
+<script>
+    const FONES = {
+        comercial: "5521992846711",
+        agendamento: "5521964862644",
+        relacionamento: "5521992846095",
+        tecnico: "5521966529725",
+        credenciamento: "5521966924265",
+        resultados: "5521976837937",
+        financeiro: "5521974482135"
+    };
+
+    function toggleChat() {
+        const chat = document.getElementById('chatWindow');
+        chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function scrollPara(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function enviarWpp(setor, tipo = '') {
+        let msg = "";
+        
+        if (setor === 'agendamento') {
+            if (tipo === 'aso') {
+                msg = `Olá! Quero AGENDAR exame PARTICULAR.\nNome: ${document.getElementById('aso-nome').value}\nCPF: ${document.getElementById('aso-cpf').value}\nNasc: ${document.getElementById('aso-nasc').value}\nFunção: ${document.getElementById('aso-funcao').value}\nTipo: ${document.getElementById('aso-tipo').value}`;
+            } else {
+                msg = `Olá! Autorização de AGENDAMENTO EMPRESA.\nEmpresa: ${document.getElementById('rh-empresa').value}\nColaborador: ${document.getElementById('rh-colab').value}\nCPF: ${document.getElementById('rh-cpf').value}\nFunção: ${document.getElementById('rh-funcao').value}\nTipo: ${document.getElementById('rh-tipo').value}`;
+            }
+        } else if (setor === 'resultados') {
+            // Lógica para adicionar a data do exame apenas se ela for preenchida (pois é opcional)
+            if (tipo === 'aso') {
+                const dataExame = document.getElementById('res-aso-data').value;
+                const txtData = dataExame ? `\nData do Exame: ${dataExame}` : '';
+                msg = `Olá! Quero solicitar RESULTADO de exame PARTICULAR.\nNome: ${document.getElementById('res-aso-nome').value}\nCPF: ${document.getElementById('res-aso-cpf').value}${txtData}\nTipo: ${document.getElementById('res-aso-tipo').value}`;
+            } else {
+                const dataExame = document.getElementById('res-rh-data').value;
+                const txtData = dataExame ? `\nData do Exame: ${dataExame}` : '';
+                msg = `Olá! Quero solicitar RESULTADO de exame EMPRESA.\nEmpresa: ${document.getElementById('res-rh-empresa').value}\nColaborador: ${document.getElementById('res-rh-colab').value}\nCPF: ${document.getElementById('res-rh-cpf').value}${txtData}\nTipo: ${document.getElementById('res-rh-tipo').value}`;
+            }
+        } else if (setor === 'comercial') {
+            msg = `Olá! Quero uma PROPOSTA COMERCIAL.\nNome: ${document.getElementById('com-nome').value}\nCNPJ: ${document.getElementById('com-cnpj').value}\nPreciso de: ${document.getElementById('com-msg').value}`;
+        } else if (setor === 'credenciamento') {
+            msg = `Olá! Gostaria de ser uma CREDENCIADA.\nCNPJ: ${document.getElementById('cred-cnpj').value}\nCidade: ${document.getElementById('cred-cidade').value}\nMédia Atend: ${document.getElementById('cred-qtd').value}`;
+        } else if (setor === 'tecnico') {
+            msg = `DÚVIDA TÉCNICA:\nNome: ${document.getElementById('tec-nome').value}\nEmpresa: ${document.getElementById('tec-empresa').value}\nDúvida: ${document.getElementById('tec-msg').value}`;
+        } else if (setor === 'relacionamento') {
+            msg = `RELACIONAMENTO/SUPORTE:\nNome: ${document.getElementById('rel-nome').value}\nEmpresa: ${document.getElementById('rel-empresa').value}\nAssunto: ${document.getElementById('rel-msg').value}`;
+        } else if (setor === 'financeiro') {
+            msg = `FINANCEIRO:\nEmpresa: ${document.getElementById('fin-empresa').value}\nAssunto: ${document.getElementById('fin-tipo').value}`;
+        }
+
+        const url = `https://api.whatsapp.com/send?phone=${FONES[setor]}&text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank');
+    }
+</script>
+</body>
+</html>
