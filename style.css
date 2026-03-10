@@ -47,13 +47,14 @@ nav {
     gap: 10px; 
     flex-grow: 1; 
     justify-content: center;
+    flex-wrap: wrap; /* Impede o menu de encavalar */
 }
 
 nav a { 
     text-decoration: none; 
     color: var(--azul-dark); 
     font-weight: 600; 
-    font-size: 11.5px; /* Ajustado minimamente para caber o novo link de Resultados */
+    font-size: 11.5px;
     white-space: nowrap; 
     transition: 0.2s; 
 }
@@ -113,12 +114,12 @@ textarea { height: 100px; resize: none; }
 .chat-window { width: 320px; background: var(--white); border-radius: 20px; position: absolute; bottom: 100px; right: 0; display: none; box-shadow: 0 15px 50px rgba(0,0,0,0.3); overflow: hidden; animation: slideUp 0.4s ease; border: 1px solid #eee; }
 @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 .chat-header { background: var(--verde); color: white; padding: 20px; font-weight: 800; text-align: center; }
-.chat-body { padding: 15px; max-height: 400px; overflow-y: auto;} /* Adicionado scroll se a tela for pequena */
+.chat-body { padding: 15px; max-height: 400px; overflow-y: auto;}
 .chat-msg { background: #f0f2f5; padding: 12px; border-radius: 10px; margin-bottom: 15px; font-size: 14px; }
 .chat-btn { display: block; width: 100%; padding: 12px; margin-bottom: 8px; border: 1.5px solid var(--verde); color: var(--verde); border-radius: 10px; cursor: pointer; text-align: left; font-size: 13px; font-weight: 600; background: none; transition: 0.2s; }
 .chat-btn:hover { background: var(--verde); color: white; }
 
-/* --- 8. FOOTER PREMIUM (CORRIGIDO) --- */
+/* --- 8. FOOTER PREMIUM --- */
 .site-footer {
     padding: 80px 0 40px;
     text-align: center;
@@ -126,16 +127,16 @@ textarea { height: 100px; resize: none; }
 .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza tudo no eixo X */
+    align-items: center;
 }
 .footer-logo {
-    width: 240px; /* Define explicitamente a largura grande */
+    width: 240px;
     height: auto;
     background: var(--white);
-    padding: 20px 40px; /* Respiro interno generoso */
+    padding: 20px 40px;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    margin-bottom: 35px; /* Empurra os links para baixo */
+    margin-bottom: 35px;
     display: block;
 }
 .footer-links {
@@ -147,7 +148,7 @@ textarea { height: 100px; resize: none; }
 .footer-links a {
     color: var(--white);
     text-decoration: none;
-    font-size: 14px; /* Aumentei um pouco a fonte do rodapé */
+    font-size: 14px;
     font-weight: 500;
     transition: var(--transition);
 }
