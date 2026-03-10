@@ -19,9 +19,9 @@
             <a href="#solucoes">Empresas</a>
             <a href="#tecnico">Técnico</a>
             <a href="#relacionamento">Relacionamento</a>
-            <a href="#credenciada">Credenciadas</a>
+            <a href="#credenciada">Credenciamento</a>
             <a href="#financeiro">Financeiro</a>
-            <a href="#trabalhe">Trabalhe Conosco</a>
+            <a href="#trabalhe">Vagas</a>
         </nav>
         <button class="btn btn-verde" onclick="toggleChat()">Atendimento Online</button>
     </div>
@@ -31,7 +31,7 @@
     <section class="hero">
         <div class="container hero-grid">
             <div class="hero-text">
-                <span class="eyebrow">Máxima Segurança do Trabalho</span>
+                <span class="eyebrow">Segurança que Gera Valor</span>
                 <h1>Estratégia e Segurança para o seu Negócio</h1>
                 <p>Gestão completa em Medicina e Segurança do Trabalho com foco em conformidade total ao eSocial e agilidade operacional.</p>
                 <div class="hero-btns">
@@ -249,14 +249,21 @@
                 <h2>Trabalhe Conosco</h2>
                 <p>Quer fazer parte da equipe Máxima?</p>
             </div>
-            <form action="https://formspree.io/f/mojkeyqd" method="POST" enctype="multipart/form-data" class="card-portal">
+            
+            <form action="https://formsubmit.co/rhpresente.sst@gmail.com" method="POST" enctype="multipart/form-data" class="card-portal">
+                <input type="hidden" name="_subject" value="Novo Currículo - Trabalhe Conosco Máxima">
+                <input type="hidden" name="_captcha" value="false">
+                
                 <input type="text" name="nome" placeholder="Nome Completo" required>
                 <input type="text" name="vaga" placeholder="Vaga de Interesse" required>
                 <textarea name="porque" placeholder="Porque você quer fazer parte da equipe Máxima?" required></textarea>
-                <label style="display:block; margin: 10px 0; font-size: 13px; font-weight: 700; color: var(--azul-dark);">Anexe seu Currículo (PDF)</label>
-                <input type="file" name="curriculo" required>
+                
+                <label style="display:block; margin: 10px 0; font-size: 13px; font-weight: 700; color: var(--azul-dark);">Anexe seu Currículo (PDF ou Word)</label>
+                <input type="file" name="curriculo" accept=".pdf,.doc,.docx" required>
+                
                 <button type="submit" class="btn btn-verde" style="width: 100%; margin-top: 15px;">Enviar Candidatura</button>
             </form>
+            
         </div>
     </section>
 
@@ -269,12 +276,12 @@
             <a href="#inicio">Início</a>
             <a href="#agendamento">Agendamento</a>
             <a href="#resultados">Resultados</a>
-            <a href="#solucoes">Para sua Empresa</a>
+            <a href="#solucoes">Empresas</a>
             <a href="#tecnico">Setor Técnico</a>
             <a href="#relacionamento">Relacionamento</a>
-            <a href="#credenciada">Seja Credenciada</a>
+            <a href="#credenciada">Credenciamento</a>
             <a href="#financeiro">Financeiro</a>
-            <a href="#trabalhe">Trabalhe Conosco</a>
+            <a href="#trabalhe">Vagas</a>
         </div>
         <p class="copyright">&copy; 2026 Máxima Segurança do Trabalho. Todos os direitos reservados.</p>
     </div>
@@ -327,7 +334,6 @@
                 msg = `Olá! Autorização de AGENDAMENTO EMPRESA.\nEmpresa: ${document.getElementById('rh-empresa').value}\nColaborador: ${document.getElementById('rh-colab').value}\nCPF: ${document.getElementById('rh-cpf').value}\nFunção: ${document.getElementById('rh-funcao').value}\nTipo: ${document.getElementById('rh-tipo').value}`;
             }
         } else if (setor === 'resultados') {
-            // Lógica para adicionar a data do exame apenas se ela for preenchida (pois é opcional)
             if (tipo === 'aso') {
                 const dataExame = document.getElementById('res-aso-data').value;
                 const txtData = dataExame ? `\nData do Exame: ${dataExame}` : '';
@@ -354,5 +360,4 @@
     }
 </script>
 </body>
-
 </html>
